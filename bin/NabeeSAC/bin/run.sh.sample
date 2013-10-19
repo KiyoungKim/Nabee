@@ -1,0 +1,92 @@
+#!/bin/bash
+# 실행할 Jar파일 등록하세요...
+
+# 프로그램 이름(설명이름)
+APP_NAME="Socket_Application_KTOAWIRE"
+
+# jar 파일명
+JAR_NAME="socket-ktoaWire.jar"
+
+# Connection Group ID
+CONN_GRP_ID="KTOA002"
+
+# 프로그램이 설치된 경로...
+APP_DIR="/app/module/socket-ktoaWire/"
+
+# 프로세스에서 조회해서 죽이거나 관리할 이름
+APP_RUNNING_NAME="$JAR_NAME $CONN_GRP_ID"
+
+# 프로그램을 실행할 명령. java 등은 기본적으로 path가 잡혀있다고 생각하고 만들었습니다...
+APP_COMMAND="nohup java -jar $APP_RUNNING_NAME"
+
+# 원래 자리로 돌아오게 현재 디렉토리 기억합니다.
+NOW_CD=`pwd`
+
+# csv파일에서 구동정보를 취득할 경우
+if [ $2 ]; then
+	APP_COMMAND="nohup java -DcsvDirPath=$2 -jar $APP_RUNNING_NAME"
+	echo $APP_COMMAND
+fi
+
+# See how we were called
+case "$1" in
+	start)
+		echo -n "Starting $APP_NAME : "
+		pid=`ps -ef | grep "$APP_RUNNING_NAME" | grep -v 'grep' | awk '{print $2}'`
+		#ps -ef 로 pid 가져오기. grep -v 는 ps 한 프로세스를 제외 하는것
+		if [ -z $pid ]; then
+			#-z 옵션은 null 일 때 true
+			cd $APP_DIR
+			$APP_COMMAND &
+			cd $NOW_CD
+		else
+			echo "Already $APP_NAME Running..."
+			echo  "Usage: $0 {start|stop|restart|list}"
+		fi
+		sleep 1
+		echo
+		;;
+
+	stop)
+		echo -n "Shutting down $APP_NAME : "
+		# 프로세스 명칭으로 골라서 죽이기...
+		echo "Push $APP_NAME shutting down....."
+		pid=`ps -ef | grep "$APP_RUNNING_NAME" | grep -v 'grep' | awk '{print $2}'`
+		#ps -ef 로 pid 가져오기. grep -v 는 ps 한 프로세스를 제외 하는것
+		if [ -z $pid ]; then
+		#-z 옵션은 null 일 때 true
+		  echo "Already $APP_NAME Stopped."
+		  exit 1
+		else
+		  kill -9 $pid
+		fi
+		echo
+		sleep 1
+		CMS_PROCESS_COUNT=`ps -ef | grep APP_RUNNING_NAME | grep -v 'grep' | awk '{print $2}' | wc | awk '{print $1}'`
+		#wc 명령은 count 를 세는 명령이므로 이렇게 하면 밑에 처럼 숫자로 표시 가능
+		echo "Operating $APP_NAME Count : "$CMS_PROCESS_COUNT
+		if [ "$CMS_PROCESS_COUNT" = "0" ]; then
+		  echo "Push $APP_NAME stopped."
+		else
+		  echo "Push $APP_NAME shutting down fail."
+		fi
+		echo
+		;;
+
+	restart)
+		$0 stop
+		sleep 5
+		$0 start $2
+		;;
+
+	list)
+		ps -ef | grep "$APP_RUNNING_NAME" | grep -v 'grep'
+		echo
+		;;
+
+	*)
+		echo  "Usage: $0 {start|stop|restart|list}"
+		exit 1
+esac
+exit 0
+

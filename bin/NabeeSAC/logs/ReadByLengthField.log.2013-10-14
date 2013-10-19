@@ -1,0 +1,54 @@
+[2013-10-14 13:18:54,602] INFO  [NetConnectionPool.initializer] Connection pool loaded.  
+[2013-10-14 13:18:54,643] INFO  [NetConnectionPool.initializer] Connection pool loaded.  
+[2013-10-14 13:18:54,644] WARN  [ResourceFactory.loadPlugin] null
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [572  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-10-14 13:18:54,693] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-10-14 13:18:54,706] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-10-14 13:18:55,780] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-10-14 13:18:55,791] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-10-14 13:18:55,794] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-10-14 13:18:55,816] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-10-14 13:20:00,311] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-10-14 13:20:00,366] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-10-14 13:20:01,390] ERROR [DBPoolManager.getConnection] java.net.ConnectException: Connection refused: connect
+CLASS [org.hsqldb.jdbc.Util                              ] METHOD [sqlException        ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCConnection                    ] METHOD [<init>              ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCDriver                        ] METHOD [getConnection       ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCDriver                        ] METHOD [connect             ] LINE [-1   ]
+CLASS [org.apache.commons.dbcp.DriverConnectionFactory   ] METHOD [createConnection    ] LINE [37   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDataSource         ] METHOD [getConnection       ] LINE [95   ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [142  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getServiceList      ] LINE [409  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getBatchServiceList ] LINE [493  ]
+CLASS [com.nabsys.process.instance.batch.BatchManager    ] METHOD [runWorker           ] LINE [85   ]
+CLASS [com.nabsys.process.instance.InstanceThread        ] METHOD [run                 ] LINE [80   ]  
+[2013-10-14 13:20:01,391] INFO  [DBPoolManager.getConnection] Retrying database connection to CONFIG.  
+[2013-10-14 13:20:02,407] WARN  [BatchManager.runWorker] Cannot create PoolableConnectionFactory (java.net.ConnectException: Connection refused: connect)
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [createDataSource    ] LINE [855  ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [166  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getServiceList      ] LINE [409  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getBatchServiceList ] LINE [493  ]
+CLASS [com.nabsys.process.instance.batch.BatchManager    ] METHOD [runWorker           ] LINE [85   ]
+CLASS [com.nabsys.process.instance.InstanceThread        ] METHOD [run                 ] LINE [80   ]  
+[2013-10-14 13:20:02,408] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-10-14 13:20:02,473] INFO  [NetConnectionPool.finalizer] Connection pool terminated.  
+[2013-10-14 13:20:02,474] INFO  [NetConnectionPool.finalizer] Connection pool terminated.  
+[2013-10-14 13:20:02,475] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  

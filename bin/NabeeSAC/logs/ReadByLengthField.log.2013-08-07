@@ -1,0 +1,54 @@
+[2013-08-07 17:33:52,013] INFO  [NetConnectionPool.initializer] Connection pool loaded.  
+[2013-08-07 17:33:52,022] INFO  [NetConnectionPool.initializer] Connection pool loaded.  
+[2013-08-07 17:33:52,026] WARN  [ResourceFactory.loadPlugin] null
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [572  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-08-07 17:33:52,094] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-08-07 17:33:52,121] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-08-07 17:33:53,198] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-08-07 17:33:53,244] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-08-07 17:33:53,246] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-08-07 17:33:53,246] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-08-07 17:34:12,982] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-08-07 17:34:13,015] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-08-07 17:34:13,027] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-08-07 17:34:13,136] INFO  [NetConnectionPool.finalizer] Connection pool terminated.  
+[2013-08-07 17:34:13,136] INFO  [NetConnectionPool.finalizer] Connection pool terminated.  
+[2013-08-07 17:34:13,137] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  
+[2013-08-07 17:37:52,532] INFO  [NetConnectionPool.initializer] Connection pool loaded.  
+[2013-08-07 17:37:52,540] INFO  [NetConnectionPool.initializer] Connection pool loaded.  
+[2013-08-07 17:37:52,543] WARN  [ResourceFactory.loadPlugin] null
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [572  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-08-07 17:37:52,607] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-08-07 17:37:52,622] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-08-07 17:37:53,685] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-08-07 17:37:53,724] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-08-07 17:37:53,726] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-08-07 17:37:53,726] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-08-07 17:38:10,157] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-08-07 17:38:10,173] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-08-07 17:38:10,191] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-08-07 17:38:10,300] INFO  [NetConnectionPool.finalizer] Connection pool terminated.  
+[2013-08-07 17:38:10,300] INFO  [NetConnectionPool.finalizer] Connection pool terminated.  
+[2013-08-07 17:38:10,301] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  
+[2013-08-07 17:44:18,831] INFO  [NetConnectionPool.initializer] Connection pool loaded.  
+[2013-08-07 17:44:18,838] INFO  [NetConnectionPool.initializer] Connection pool loaded.  
+[2013-08-07 17:44:18,841] WARN  [ResourceFactory.loadPlugin] null
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [572  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-08-07 17:44:18,903] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-08-07 17:44:18,916] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-08-07 17:44:19,997] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-08-07 17:44:20,037] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-08-07 17:44:20,040] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-08-07 17:44:20,040] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-08-07 17:44:41,751] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-08-07 17:44:41,775] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-08-07 17:44:41,794] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-08-07 17:44:41,904] INFO  [NetConnectionPool.finalizer] Connection pool terminated.  
+[2013-08-07 17:44:41,904] INFO  [NetConnectionPool.finalizer] Connection pool terminated.  
+[2013-08-07 17:44:41,905] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  

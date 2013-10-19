@@ -1,0 +1,22 @@
+[2013-10-14 13:18:49,583] INFO  [NabeeApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-10-14 13:18:49,638] INFO  [AppManager.runWorker] 어플리케이션 매니져 프로세스가 로딩되었습니다.  
+[2013-10-14 13:18:49,642] INFO  [ConfigurationInitializer.initConfigRepository] 설정 데이터베이스를 로딩합니다.  
+[2013-10-14 13:18:50,351] INFO  [Logger.logInfoEvent] dataFileCache open start  
+[2013-10-14 13:18:50,359] INFO  [Logger.logInfoEvent] dataFileCache open end  
+[2013-10-14 13:18:50,402] INFO  [Logger.logInfoEvent] checkpointClose start  
+[2013-10-14 13:18:50,474] INFO  [Logger.logInfoEvent] dataFileCache commit start  
+[2013-10-14 13:18:50,614] INFO  [Logger.logInfoEvent] checkpointClose end  
+[2013-10-14 13:18:50,999] INFO  [ConfigurationInitializer.initConfigRepository] 설정 데이터베이스가 로딩되었습니다.  
+[2013-10-14 13:18:51,098] INFO  [AppManager.runWorker] 서비스 소켓이 오픈되었습니다.  
+[2013-10-14 13:18:52,082] INFO  [InstanceManager.loadInstances] 인스턴스 로딩을 호출하였습니다. [FlexibleTest]  
+[2013-10-14 13:18:52,133] INFO  [WorkerProcess.runWorker] 워커 프로세스 로딩 성공. (Access address : 127.0.0.1)  
+[2013-10-14 13:18:53,141] INFO  [WorkerProcess.runWorker] 인스턴스를 등록하였습니다. [FlexibleTest]  
+[2013-10-14 13:18:53,386] INFO  [InstanceManager.loadInstances] 인스턴스 로딩을 호출하였습니다. [PMS]  
+[2013-10-14 13:18:53,430] INFO  [WorkerProcess.runWorker] 워커 프로세스 로딩 성공. (Access address : 127.0.0.1)  
+[2013-10-14 13:18:54,455] INFO  [WorkerProcess.runWorker] 인스턴스를 등록하였습니다. [PMS]  
+[2013-10-14 13:18:54,694] INFO  [InstanceManager.loadInstances] 인스턴스 로딩을 호출하였습니다. [ReadByLengthField]  
+[2013-10-14 13:18:54,731] INFO  [WorkerProcess.runWorker] 워커 프로세스 로딩 성공. (Access address : 127.0.0.1)  
+[2013-10-14 13:18:55,750] INFO  [WorkerProcess.runWorker] 인스턴스를 등록하였습니다. [ReadByLengthField]  
+[2013-10-14 13:19:49,086] INFO  [WorkerProcess.runWorker] 워커 프로세스 로딩 성공. (Access address : 127.0.0.1)  
+[2013-10-14 13:19:57,393] INFO  [WorkerProcess.runWorker] 상대방의 연결이 종료되었습니다.  
+[2013-10-14 13:19:57,401] INFO  [WorkerProcess.runWorker] 워커 프로세스 종료. [127.0.0.1]  

@@ -1,0 +1,14 @@
+[2013-10-15 13:48:05,470] WARN  [ResourceFactory.loadPlugin] null
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [572  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-10-15 13:48:05,535] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-10-15 13:48:05,545] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-10-15 13:48:06,585] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-10-15 13:48:06,617] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-10-15 13:48:06,618] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-10-15 13:48:06,618] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-10-15 13:48:09,860] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-10-15 13:48:09,874] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-10-15 13:48:09,894] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-10-15 13:48:09,996] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  

@@ -1,0 +1,12 @@
+[2013-10-15 13:48:06,569] INFO  [DatabaseConnector.initializer] Database loaded.  
+[2013-10-15 13:48:06,637] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-10-15 13:48:06,645] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-10-15 13:48:07,689] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-10-15 13:48:07,712] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-10-15 13:48:07,714] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-10-15 13:48:07,714] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-10-15 13:48:07,905] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-10-15 13:48:07,922] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-10-15 13:48:07,942] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-10-15 13:48:08,043] INFO  [DatabaseConnector.finalizer] Database terminated.  
+[2013-10-15 13:48:08,043] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  

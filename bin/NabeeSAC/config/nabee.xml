@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+<license-key/>
+<log-properties>config/nabeelog4j.xml</log-properties>
+<time-locale>KOREA</time-locale>
+<server-encoding>EUC-KR</server-encoding>
+
+
+<network>
+<max-client-num>20</max-client-num>
+<service-port>9487</service-port>
+<max-socket-buffer comment="byte">4096</max-socket-buffer>
+<read-time-out comment="second">0</read-time-out>
+</network>
+
+
+<protocol-list>
+<protocol class="com.nabsys.net.protocol.flxb.FlexibleProtocolHandler" id="FLXB" name="Flexible length"/>
+<protocol class="com.nabsys.net.protocol.asnd.LengthFieldIncludeLengthFieldProtocolHandler" id="LINL" name="Length field include Length Field"/>
+<protocol class="com.nabsys.net.protocol.asnd.LengthFieldExcludeLengthFieldProtocolHandler" id="LEXL" name="Length field exclude Length Field"/>
+<protocol class="com.nabsys.net.protocol.fixd.FixedLengthProtocolHandler" id="FIXD" name="Fixed length"/>
+<protocol class="com.nabsys.net.protocol.delimiter.NullDelimiterProtocolHandler" id="NULDT" name="Null delimiter"/>
+<protocol class="com.nabsys.net.protocol.delimiter.LFDelimiterProtocolHandler" id="LFDT" name="LF delimiter"/>
+<protocol class="com.nabsys.net.protocol.delimiter.CRDelimiterProtocolHandler" id="CRDT" name="CR delimiter"/>
+</protocol-list>
+
+<plug-in-list>
+<plug-in id="ASYNC_CON_POOL" name="ASYNC CONNECT POOL" type="CONNECTION">
+<param id="CLASS">plugins.NetConnectionPool</param>
+<param id="CONNECTION_TARGET">127.0.0.1</param>
+<param id="TARGET_PORT">8001</param>
+<param id="MAX_SOCK_BUFF">4096</param>
+<param id="SOCK_READ_TIMEOUT">5</param>
+<param id="SOCK_KEEP_ALIVE">false</param>
+<param id="MAX_POOL_ACTIVE">10</param>
+<param id="MAX_POOL_IDLE">5</param>
+<param id="SOCK_MAX_WAIT">2</param>
+<param id="ENCODING">EUC-KR</param>
+<param id="ID_FIELD_ID">SERVICE_ID</param>
+<param id="LENGTH_FIELD_ID">LENGTH</param>
+<param id="LENGTH_FIELD_OFFSET">0</param>
+<param id="LENGTH_FIELD_LENGTH">4</param>
+<param id="LENGTH_FIELD_ADJUSTMENT">-4</param>
+</plug-in>
+<plug-in id="SYNC_CON_POOL" name="SYNC CONNECT POOL" type="CONNECTION">
+<param id="CLASS">plugins.NetConnectionPool</param>
+<param id="CONNECTION_TARGET">127.0.0.1</param>
+<param id="TARGET_PORT">8002</param>
+<param id="MAX_SOCK_BUFF">4096</param>
+<param id="SOCK_READ_TIMEOUT">5</param>
+<param id="SOCK_KEEP_ALIVE">false</param>
+<param id="MAX_POOL_ACTIVE">10</param>
+<param id="MAX_POOL_IDLE">5</param>
+<param id="SOCK_MAX_WAIT">2</param>
+<param id="ENCODING">EUC-KR</param>
+<param id="ID_FIELD_ID">SERVICE_ID</param>
+<param id="LENGTH_FIELD_ID">LENGTH</param>
+<param id="LENGTH_FIELD_OFFSET">0</param>
+<param id="LENGTH_FIELD_LENGTH">4</param>
+<param id="LENGTH_FIELD_ADJUSTMENT">-4</param>
+</plug-in>
+
+<plug-in id="PMS_DB" name="PMS DATABASE" type="DATABASE">
+<param id="DRIVER">com.mysql.jdbc.Driver</param>
+<param id="URL">jdbc:mysql://localhost:3306/PMS_DB</param>
+<param id="POOL_DRIVER_URL">jdbc:apache:commons:dbcp:</param>
+<param id="USER">NPMS</param>
+<param id="PW">new1234!</param>
+<param id="POOL_NAME">PMS_DB</param>
+<param id="POOL_MAX_ACTIVE">10</param>
+<param id="POOL_MAX_WAIT">2000</param>
+<param id="POOL_IDLE">10</param>
+<param id="POOL_DEFAULT_AUTO_COMMIT">true</param>
+<param id="POOL_DEFAULT_READ_ONLY">false</param>
+<param id="CLASS">plugins.DatabaseConnector</param>
+</plug-in>
+
+</plug-in-list>
+</server>

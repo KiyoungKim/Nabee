@@ -1,0 +1,23 @@
+[2013-10-18 22:00:03,172] WARN  [ResourceFactory.loadPlugin] null
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [572  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-10-18 22:00:03,211] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-10-18 22:00:03,220] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-10-18 22:00:04,258] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-10-18 22:00:04,287] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-10-18 22:00:04,288] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-10-18 22:00:04,288] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-10-18 22:04:08,842] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-10-18 22:04:08,858] ERROR [MessageQueueManager.finalize] 메시지 큐 저장에 실패했습니다.  
+[2013-10-18 22:04:08,860] ERROR [MessageQueueManager.finalize] data\FlexibleTestQUE.DAT (시스템에서 파일에 액세스할 수 없습니다)
+CLASS [java.io.FileOutputStream                          ] METHOD [open                ] LINE [-2   ]
+CLASS [java.io.FileOutputStream                          ] METHOD [<init>              ] LINE [221  ]
+CLASS [java.io.FileOutputStream                          ] METHOD [<init>              ] LINE [171  ]
+CLASS [com.nabsys.common.fileio.ObjectFileIO             ] METHOD [saveObject          ] LINE [35   ]
+CLASS [com.nabsys.process.instance.messagequeue.MessageQueueManager] METHOD [finalize            ] LINE [275  ]
+CLASS [com.nabsys.process.instance.messagequeue.MessageQueueManager] METHOD [runWorker           ] LINE [224  ]
+CLASS [com.nabsys.process.instance.InstanceThread        ] METHOD [run                 ] LINE [80   ]  
+[2013-10-18 22:04:08,860] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-10-18 22:04:08,875] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-10-18 22:04:08,977] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  

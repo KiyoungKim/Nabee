@@ -1,0 +1,171 @@
+[2013-09-24 20:37:20,618] ERROR [DBPoolManager.getConnection] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [createDataSource    ] LINE [855  ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [142  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [initConnectionPool  ] LINE [132  ]
+CLASS [plugins.DatabaseConnector                         ] METHOD [initializer         ] LINE [47   ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [576  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-09-24 20:37:20,639] INFO  [DBPoolManager.getConnection] Retrying database connection to PMS_DB.  
+[2013-09-24 20:37:20,644] WARN  [DatabaseConnector.initializer] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))  
+[2013-09-24 20:37:20,644] WARN  [ResourceFactory.loadPlugin] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))  
+[2013-09-24 20:37:20,649] WARN  [ResourceFactory.loadPlugin] 플러그인 로딩 실패. [PMS_DB]
+CLASS [plugins.DatabaseConnector                         ] METHOD [initializer         ] LINE [50   ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [576  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-09-24 20:37:20,684] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-09-24 20:37:20,695] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-09-24 20:37:21,737] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-09-24 20:37:21,764] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-09-24 20:37:21,765] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-09-24 20:37:21,766] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-09-24 20:41:05,700] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-09-24 20:41:05,714] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-09-24 20:41:05,733] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-09-24 20:41:05,836] INFO  [DatabaseConnector.finalizer] Database terminated.  
+[2013-09-24 20:41:05,837] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  
+[2013-09-24 20:55:35,991] ERROR [DBPoolManager.getConnection] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [createDataSource    ] LINE [855  ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [142  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [initConnectionPool  ] LINE [132  ]
+CLASS [plugins.DatabaseConnector                         ] METHOD [initializer         ] LINE [47   ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [576  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-09-24 20:55:35,993] INFO  [DBPoolManager.getConnection] Retrying database connection to PMS_DB.  
+[2013-09-24 20:55:35,997] WARN  [DatabaseConnector.initializer] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))  
+[2013-09-24 20:55:35,998] WARN  [ResourceFactory.loadPlugin] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))  
+[2013-09-24 20:55:36,004] WARN  [ResourceFactory.loadPlugin] 플러그인 로딩 실패. [PMS_DB]
+CLASS [plugins.DatabaseConnector                         ] METHOD [initializer         ] LINE [50   ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [576  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-09-24 20:55:36,037] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-09-24 20:55:36,047] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-09-24 20:55:37,091] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-09-24 20:55:37,117] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-09-24 20:55:37,118] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-09-24 20:55:37,119] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-09-24 20:56:47,681] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-09-24 20:56:47,706] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-09-24 20:56:47,729] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-09-24 20:56:47,831] INFO  [DatabaseConnector.finalizer] Database terminated.  
+[2013-09-24 20:56:47,832] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  
+[2013-09-24 22:06:11,976] ERROR [DBPoolManager.getConnection] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [createDataSource    ] LINE [855  ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [142  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [initConnectionPool  ] LINE [132  ]
+CLASS [plugins.DatabaseConnector                         ] METHOD [initializer         ] LINE [47   ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [576  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-09-24 22:06:11,978] INFO  [DBPoolManager.getConnection] Retrying database connection to PMS_DB.  
+[2013-09-24 22:06:11,983] WARN  [DatabaseConnector.initializer] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))  
+[2013-09-24 22:06:11,984] WARN  [ResourceFactory.loadPlugin] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))  
+[2013-09-24 22:06:11,985] WARN  [ResourceFactory.loadPlugin] 플러그인 로딩 실패. [PMS_DB]
+CLASS [plugins.DatabaseConnector                         ] METHOD [initializer         ] LINE [50   ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [576  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-09-24 22:06:12,025] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-09-24 22:06:12,039] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-09-24 22:06:13,097] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-09-24 22:06:13,117] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-09-24 22:06:13,119] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-09-24 22:06:13,121] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-09-24 22:06:43,140] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-09-24 22:06:43,208] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-09-24 22:06:45,402] ERROR [DBPoolManager.getConnection] java.net.ConnectException: Connection refused: connect
+CLASS [org.hsqldb.jdbc.Util                              ] METHOD [sqlException        ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCConnection                    ] METHOD [<init>              ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCDriver                        ] METHOD [getConnection       ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCDriver                        ] METHOD [connect             ] LINE [-1   ]
+CLASS [org.apache.commons.dbcp.DriverConnectionFactory   ] METHOD [createConnection    ] LINE [37   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDataSource         ] METHOD [getConnection       ] LINE [95   ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [142  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getServiceList      ] LINE [409  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getMessageQueueServiceList] LINE [508  ]
+CLASS [com.nabsys.process.instance.messagequeue.MessageQueueManager] METHOD [runWorker           ] LINE [142  ]
+CLASS [com.nabsys.process.instance.InstanceThread        ] METHOD [run                 ] LINE [80   ]  
+[2013-09-24 22:06:45,402] INFO  [DBPoolManager.getConnection] Retrying database connection to CONFIG.  
+[2013-09-24 22:06:46,411] FATAL [MessageQueueManager.runWorker] 메시지큐 데이터 로딩 실패했습니다.
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [createDataSource    ] LINE [855  ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [166  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getServiceList      ] LINE [409  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getMessageQueueServiceList] LINE [508  ]
+CLASS [com.nabsys.process.instance.messagequeue.MessageQueueManager] METHOD [runWorker           ] LINE [142  ]
+CLASS [com.nabsys.process.instance.InstanceThread        ] METHOD [run                 ] LINE [80   ]  
+[2013-09-24 22:06:46,502] INFO  [DatabaseConnector.finalizer] Database terminated.  
+[2013-09-24 22:06:46,502] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  
+[2013-09-24 22:06:52,995] ERROR [DBPoolManager.getConnection] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [createDataSource    ] LINE [855  ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [142  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [initConnectionPool  ] LINE [132  ]
+CLASS [plugins.DatabaseConnector                         ] METHOD [initializer         ] LINE [47   ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [576  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-09-24 22:06:52,997] INFO  [DBPoolManager.getConnection] Retrying database connection to PMS_DB.  
+[2013-09-24 22:06:53,001] WARN  [DatabaseConnector.initializer] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))  
+[2013-09-24 22:06:53,001] WARN  [ResourceFactory.loadPlugin] Cannot create PoolableConnectionFactory (Access denied for user 'NPMS'@'localhost' (using password: YES))  
+[2013-09-24 22:06:53,002] WARN  [ResourceFactory.loadPlugin] 플러그인 로딩 실패. [PMS_DB]
+CLASS [plugins.DatabaseConnector                         ] METHOD [initializer         ] LINE [50   ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [loadPlugin          ] LINE [576  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [<init>              ] LINE [62   ]
+CLASS [com.nabsys.process.instance.InstanceApp           ] METHOD [main                ] LINE [76   ]  
+[2013-09-24 22:06:53,039] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-09-24 22:06:53,049] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-09-24 22:06:54,112] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-09-24 22:06:54,133] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-09-24 22:06:54,135] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-09-24 22:06:54,141] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-09-24 22:06:58,004] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-09-24 22:06:58,061] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-09-24 22:06:58,076] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-09-24 22:06:58,176] INFO  [DatabaseConnector.finalizer] Database terminated.  
+[2013-09-24 22:06:58,176] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  

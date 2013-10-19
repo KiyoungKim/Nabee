@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+<appender name="CONSOLE_APPENDER" class="org.apache.log4j.ConsoleAppender">
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS}] %-5p [%C{1}.%M] %m  %n"/>
+</layout>
+</appender>
+
+<appender name="DAILY_APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+<param name="Encoding" value="EUC-KR" />
+<param name="datePattern" value="'.'yyyy-MM-dd"/>
+<param name="file" value="./logs/nabee.log"/>
+<param name="append" value="true"/>
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss,SSS}] %-5p [%C{1}.%M] %m  %n"/>
+</layout>
+</appender>
+
+<category name="com.nabsys" additivity="true">
+<priority value="debug"/>
+<appender-ref ref="CONSOLE_APPENDER"/>
+<appender-ref ref="DAILY_APPENDER"/>
+</category>
+
+<category name="hsqldb.db" additivity="true">
+<priority value="debug"/>
+<appender-ref ref="CONSOLE_APPENDER"/>
+<appender-ref ref="DAILY_APPENDER"/>
+</category>
+
+
+
+<loggerFactory class="com.nabsys.common.logger.CustomLoggerFactory"/>
+</log4j:configuration>

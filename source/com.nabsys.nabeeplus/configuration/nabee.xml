@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monitor>
+<server id="NBS_01">
+<password>E3AFED047B08059D0FADA10F40C1E5</password>
+<user>Admin</user>
+<server-encoding>EUC-KR</server-encoding>
+<channel-port/>
+<ip>127.0.0.1</ip>
+<port>9487</port>
+<channel/>
+</server>
+</monitor>

@@ -1,0 +1,358 @@
+[2013-10-14 13:18:53,315] INFO  [DatabaseConnector.initializer] Database loaded.  
+[2013-10-14 13:18:53,386] INFO  [InstanceApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-10-14 13:18:53,396] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 시작되었습니다.  
+[2013-10-14 13:18:54,484] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 실행되었습니다.  
+[2013-10-14 13:18:54,503] INFO  [InternalCommunicator.runWorker] 서비스 리스너를 시작하였습니다.  
+[2013-10-14 13:18:54,508] INFO  [InternalCommunicator.runWorker] 인스턴스 로딩을 완료 하였습니다. 서비스 준비가 완료 되었습니다.  
+[2013-10-14 13:18:54,524] INFO  [BatchManager.runWorker] 배치 매니져가 실행되었습니다.  
+[2013-10-14 13:19:08,038] DEBUG [LogHandler.channelOpen] [10564607:/127.0.0.1:49253] Channel opened.  
+[2013-10-14 13:19:08,042] DEBUG [LogHandler.channelConnected] [10564607:/127.0.0.1:49253] Channel connected.  
+[2013-10-14 13:19:08,044] DEBUG [ResourceFactory.getOnlineService] Request service : LOGIN  
+[2013-10-14 13:19:08,062] DEBUG [LogHandler.messageReceived] [10564607:/127.0.0.1:49253]메시지를 수신하였습니다.  
+[2013-10-14 13:19:08,063] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=299, RSV_SERVICE_ID=LOGIN, RSV_RETURN=0, RSV_REP_YN=0, PWD=new1234!, ID=kykim, SAVE_LOGIN=on, LOGIN_MEMBER=, LOGIN_MEMBER_NAME=, APP_TITLE=, LOGIN_MEMBER_TYPE=, RemotePort=49244, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/portal/member/login_r.jsp}  
+[2013-10-14 13:19:08,076] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.portal.member.select.member_r_01/*
+	Date		: 2012.11.07
+	Author		: Kiyoung Kim
+	Description : Search member for login
+*/ SELECT ACCESS_MEMBER.MEMBER_TYPE, 
+        MEMBER.NAME,
+        IF(MEMBER.ID IS NOT NULL,'Y', 'N') AS REG_INFO,
+        DATE_FORMAT(CURRENT_TIMESTAMP, '%Y%m%d%k%i%s') LOGIN_TIME,
+        '1' AS EXC_ORDER
+   FROM ACCESS_MEMBER
+        LEFT OUTER JOIN
+	MEMBER
+	ON MEMBER.ID = ACCESS_MEMBER.ID 
+  WHERE 1=1
+    AND ACCESS_MEMBER.ID = 'kykim'
+    AND ACCESS_MEMBER.PWD = MD5('new1234!')
+    AND ACCESS_MEMBER.USE_YN = 'Y'
+    AND ACCESS_MEMBER.EXPIRE_DATE >= CURRENT_DATE  
+[2013-10-14 13:19:08,115] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.portal.member.select.member_r_01/*
+	Date		: 2012.11.07
+	Author		: Kiyoung Kim
+	Description : Search member for login
+*/SELECT IF(COUNT(*) > 0, 'Y', 'N') AS ACCESS_YN
+  FROM ACCESS_LIST, ROLE
+ WHERE ROLE.MEMBER_ID = ACCESS_LIST.ROLE_MEMBER_ID
+   AND ROLE.ORGANIZATION_ID = ACCESS_LIST.ORGANIZATION_ID
+   AND ACCESS_LIST.ROLE_MEMBER_ID = 'kykim'
+   AND ROLE.USE_YN = 'Y'  
+[2013-10-14 13:19:08,126] DEBUG [LogHandler.writeRequested] [10564607:/127.0.0.1:49253] Write requested.  
+[2013-10-14 13:19:08,126] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=299, RSV_SERVICE_ID=LOGIN, RSV_RETURN=0, RSV_REP_YN=0, PWD=new1234!, ID=kykim, SAVE_LOGIN=on, LOGIN_MEMBER=, LOGIN_MEMBER_NAME=, APP_TITLE=, LOGIN_MEMBER_TYPE=, RemotePort=49244, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/portal/member/login_r.jsp, MEMBER_TYPE=ET001ET001, NAME=김기영, REG_INFO=Y, LOGIN_TIME=20131014131908, EXC_ORDER=1, ACCESS_YN=Y}  
+[2013-10-14 13:19:08,126] DEBUG [ResourceFactory.getOnlineService] Request service : LOGIN  
+[2013-10-14 13:19:08,137] DEBUG [LogHandler.writeComplete] [10564607:/127.0.0.1:49253] Write complete.  
+[2013-10-14 13:19:09,032] DEBUG [ResourceFactory.getOnlineService] Request service : GET_BOARD_MASTER  
+[2013-10-14 13:19:09,042] DEBUG [LogHandler.messageReceived] [10564607:/127.0.0.1:49253]메시지를 수신하였습니다.  
+[2013-10-14 13:19:09,042] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=50, RSV_SERVICE_ID=GET_BOARD_MASTER, RSV_RETURN=0, RSV_REP_YN=0, BOARD_MASTER_ID=20130121191039002}  
+[2013-10-14 13:19:09,051] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.board.select.board_master_r_02SELECT *
+FROM BOARD_MASTER
+WHERE ID = '20130121191039002'  
+[2013-10-14 13:19:09,067] DEBUG [LogHandler.writeRequested] [10564607:/127.0.0.1:49253] Write requested.  
+[2013-10-14 13:19:09,068] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=50, RSV_SERVICE_ID=GET_BOARD_MASTER, RSV_RETURN=0, RSV_REP_YN=0, BOARD_MASTER_ID=20130121191039002, LIST=[{ID=20130121191039002, TITLE=공지사항, MAX_ROW_NUM=5, USE_REPLY=N, USE_FILE_ATMT=Y, BOARD_WIDTH=730, USE_YN=Y, RGST_DTTM=2013-01-21 19:10:39.0, MDF_DTTM=2013-02-18 14:26:38.0}]}  
+[2013-10-14 13:19:09,068] DEBUG [ResourceFactory.getOnlineService] Request service : GET_BOARD_MASTER  
+[2013-10-14 13:19:09,078] DEBUG [LogHandler.writeComplete] [10564607:/127.0.0.1:49253] Write complete.  
+[2013-10-14 13:19:09,912] DEBUG [ResourceFactory.getOnlineService] Request service : BOARD_LIST_SEARCH  
+[2013-10-14 13:19:09,925] DEBUG [LogHandler.messageReceived] [10564607:/127.0.0.1:49253]메시지를 수신하였습니다.  
+[2013-10-14 13:19:09,925] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=958, RSV_SERVICE_ID=BOARD_LIST_SEARCH, RSV_RETURN=0, RSV_REP_YN=0, sSearch_2=, bRegex=false, sSearch_3=, sSearch_0=, sSearch_1=, sSearch=, iSortingCols=0, mDataProp_0=0, mDataProp_1=1, mDataProp_2=2, mDataProp_3=3, bSortable_2=true, bSortable_1=true, bSortable_3=false, bSortable_0=true, sColumns=, iColumns=4, BOARD_MASTER_ID=20130121191039002, bRegex_2=false, bSearchable_2=true, bRegex_3=false, bSearchable_1=true, bSearchable_0=true, iDisplayStart=0, iDisplayLength=5, sEcho=1, bRegex_0=false, bRegex_1=false, bSearchable_3=true, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49250, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/board/board_article_list_search.jsp}  
+[2013-10-14 13:19:09,936] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.board.select.board_r_01SELECT BOARD_ID, 
+       TITLE, 
+       CONCAT(CONCAT(BOARD.AUTHOR, ':'), MEMBER.NAME) AS AUTHOR,
+       DATE_FORMAT(BOARD.RGST_DTTM,'%Y-%m-%d') AS RGST_DTTM,
+       REVIEW_CNT
+  FROM BOARD, MEMBER
+ WHERE 1=1
+   AND MEMBER.ID = BOARD.AUTHOR
+   AND BOARD_MASTER_ID = '20130121191039002'ORDER BY       BOARD.RGST_DTTM DESCLIMIT '0', '5'  
+[2013-10-14 13:19:09,952] DEBUG [LogHandler.writeRequested] [10564607:/127.0.0.1:49253] Write requested.  
+[2013-10-14 13:19:09,953] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=958, RSV_SERVICE_ID=BOARD_LIST_SEARCH, RSV_RETURN=0, RSV_REP_YN=0, sSearch_2=, bRegex=false, sSearch_3=, sSearch_0=, sSearch_1=, sSearch=, iSortingCols=0, mDataProp_0=0, mDataProp_1=1, mDataProp_2=2, mDataProp_3=3, bSortable_2=true, bSortable_1=true, bSortable_3=false, bSortable_0=true, sColumns=, iColumns=4, BOARD_MASTER_ID=20130121191039002, bRegex_2=false, bSearchable_2=true, bRegex_3=false, bSearchable_1=true, bSearchable_0=true, iDisplayStart=0, iDisplayLength=5, sEcho=1, bRegex_0=false, bRegex_1=false, bSearchable_3=true, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49250, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/board/board_article_list_search.jsp, LIST=[{BOARD_ID=20131010164514119, TITLE=트리거 테스트, AUTHOR=kykim:김기영, RGST_DTTM=2013-10-10, REVIEW_CNT=1}, {BOARD_ID=20130812115649116, TITLE=파일첨부 테스트, AUTHOR=kykim:김기영, RGST_DTTM=2013-08-12, REVIEW_CNT=18}, {BOARD_ID=20130213162803076, TITLE=글쓰기 테스트 , AUTHOR=kykim:김기영, RGST_DTTM=2013-02-13, REVIEW_CNT=62}, {BOARD_ID=20130213162735075, TITLE=글쓰기 테스트, AUTHOR=kykim:김기영, RGST_DTTM=2013-02-13, REVIEW_CNT=20}, {BOARD_ID=20130213141640074, TITLE=첨부파일 여러개 테스트, AUTHOR=kykim:김기영, RGST_DTTM=2013-02-13, REVIEW_CNT=80}], TOTAL_CNT=5}  
+[2013-10-14 13:19:09,954] DEBUG [ResourceFactory.getOnlineService] Request service : BOARD_LIST_SEARCH  
+[2013-10-14 13:19:09,966] DEBUG [LogHandler.writeComplete] [10564607:/127.0.0.1:49253] Write complete.  
+[2013-10-14 13:19:09,998] DEBUG [ResourceFactory.getOnlineService] Request service : HYC_MENU_SCH  
+[2013-10-14 13:19:10,009] DEBUG [LogHandler.messageReceived] [10564607:/127.0.0.1:49253]메시지를 수신하였습니다.  
+[2013-10-14 13:19:10,009] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=291, RSV_SERVICE_ID=HYC_MENU_SCH, RSV_RETURN=0, RSV_REP_YN=0, _=1381724349331, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49244, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/include/menu_hy_json.jsp}  
+[2013-10-14 13:19:10,020] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.portal.menu.select.menu_r_07/*
+	Date		: 2012.12.12
+	Author		: Kiyoung Kim
+	Description : Retrieve hierarchy menu list for login
+
+    2012.12.26  : SimpleQuery.select() 로 변환 및 SQL 변경
+*/
+
+SELECT MENU.ID, 
+       MENU.PARENT_ID, 
+       HIERARCHY.LEVEL,
+       MENU.IMAGE,
+       MENU.NAME, 
+       MENU.LINK_VALUE, 
+       MENU_ORDER,
+       IF(ACCESS_LEVEL IS NULL, 'AR001AR001', ACCESS_LEVEL) AS ACCESS_LEVEL
+  FROM  
+       (
+        SELECT @id := MENU_HIERARCHY_ALL() AS ID, 
+               @level AS LEVEL, PARENT_ID
+          FROM (
+                SELECT @level := 0
+               )VARS, MENU
+         WHERE ID IS NOT NULL
+       ) HIERARCHY
+       JOIN MENU 
+       ON MENU.ID = HIERARCHY.ID
+       LEFT OUTER JOIN     
+        (
+       SELECT MENU_ID, MAX(ACCESS_LEVEL) ACCESS_LEVEL
+         FROM ACCESS_LIST
+        WHERE ROLE_MEMBER_ID = 'kykim'
+     GROUP BY MENU_ID
+        ) ACCESS_LIST
+       ON HIERARCHY.ID = ACCESS_LIST.MENU_ID
+ WHERE ACCESS_LIST.MENU_ID IS NOT NULL OR LINK_VALUE IS NULL OR LINK_VALUE = ''  
+[2013-10-14 13:19:10,107] DEBUG [LogHandler.writeRequested] [10564607:/127.0.0.1:49253] Write requested.  
+[2013-10-14 13:19:10,108] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=291, RSV_SERVICE_ID=HYC_MENU_SCH, RSV_RETURN=0, RSV_REP_YN=0, _=1381724349331, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49244, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/include/menu_hy_json.jsp, LIST=[{ID=MENU0018, PARENT_ID=MENU0018, LEVEL=1, IMAGE=null, NAME=프로젝트홈, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/project_dashboard.jsp');, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0004, PARENT_ID=MENU0004, LEVEL=1, IMAGE=null, NAME=프로젝트관리, LINK_VALUE=, MENU_ORDER=1, ACCESS_LEVEL=AR001AR001}, {ID=MENU0017, PARENT_ID=MENU0004, LEVEL=2, IMAGE=null, NAME=일정관리, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/schedule_management.jsp');, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0021, PARENT_ID=MENU0004, LEVEL=2, IMAGE=null, NAME=예산관리, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/budget_management.jsp');, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0023, PARENT_ID=MENU0004, LEVEL=2, IMAGE=null, NAME=예산집행관리, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/cost_management.jsp');, MENU_ORDER=2, ACCESS_LEVEL=AR001AR002}, {ID=MENU0028, PARENT_ID=MENU0028, LEVEL=1, IMAGE=null, NAME=보고서, LINK_VALUE=, MENU_ORDER=2, ACCESS_LEVEL=AR001AR001}, {ID=MENU0026, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=회의록, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/conference_management.jsp');, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0022, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=일일보고, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/report_d_management.jsp');, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0024, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=주간보고, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/report_w_management.jsp');, MENU_ORDER=2, ACCESS_LEVEL=AR001AR002}, {ID=MENU0025, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=월간보고, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/report_m_management.jsp');, MENU_ORDER=3, ACCESS_LEVEL=AR001AR002}, {ID=MENU0027, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=의사결정요청관리, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/decision_management.jsp');, MENU_ORDER=4, ACCESS_LEVEL=AR001AR002}, {ID=MENU0019, PARENT_ID=MENU0019, LEVEL=1, IMAGE=null, NAME=프로젝트마스터, LINK_VALUE=, MENU_ORDER=3, ACCESS_LEVEL=AR001AR001}, {ID=MENU0005, PARENT_ID=MENU0019, LEVEL=2, IMAGE=null, NAME=프로젝트관리, LINK_VALUE=/jsp/pms/project/project_management.jsp, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0015, PARENT_ID=MENU0019, LEVEL=2, IMAGE=null, NAME=프로젝트멤버관리, LINK_VALUE=/jsp/pms/project/project_member_management.jsp, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0001, PARENT_ID=MENU0001, LEVEL=1, IMAGE=null, NAME=시스템관리, LINK_VALUE=, MENU_ORDER=4, ACCESS_LEVEL=AR001AR001}, {ID=MENU0008, PARENT_ID=MENU0001, LEVEL=2, IMAGE=null, NAME=멤버관리, LINK_VALUE=, MENU_ORDER=0, ACCESS_LEVEL=AR001AR001}, {ID=MENU0007, PARENT_ID=MENU0008, LEVEL=3, IMAGE=null, NAME=멤버관리, LINK_VALUE=/jsp/pms/portal/member/member_management.jsp, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0009, PARENT_ID=MENU0008, LEVEL=3, IMAGE=null, NAME=부서관리, LINK_VALUE=/jsp/pms/portal/member/organization_management.jsp, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0011, PARENT_ID=MENU0008, LEVEL=3, IMAGE=null, NAME=접근관리, LINK_VALUE=/jsp/pms/portal/member/access_management.jsp, MENU_ORDER=2, ACCESS_LEVEL=AR001AR002}, {ID=MENU0010, PARENT_ID=MENU0001, LEVEL=2, IMAGE=null, NAME=마스터관리, LINK_VALUE=, MENU_ORDER=1, ACCESS_LEVEL=AR001AR001}, {ID=MENU0003, PARENT_ID=MENU0010, LEVEL=3, IMAGE=null, NAME=코드관리, LINK_VALUE=/jsp/pms/portal/code/code_management.jsp, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0013, PARENT_ID=MENU0010, LEVEL=3, IMAGE=null, NAME=게시판관리, LINK_VALUE=/jsp/pms/board/board_master_management.jsp, MENU_ORDER=2, ACCESS_LEVEL=AR001AR002}, {ID=MENU0002, PARENT_ID=MENU0010, LEVEL=3, IMAGE=null, NAME=메뉴관리, LINK_VALUE=/jsp/pms/portal/menu/menu_management.jsp, MENU_ORDER=3, ACCESS_LEVEL=AR001AR002}, {ID=MENU0012, PARENT_ID=MENU0012, LEVEL=1, IMAGE=null, NAME=현황관리, LINK_VALUE=, MENU_ORDER=5, ACCESS_LEVEL=AR001AR001}]}  
+[2013-10-14 13:19:10,108] DEBUG [ResourceFactory.getOnlineService] Request service : HYC_MENU_SCH  
+[2013-10-14 13:19:10,122] DEBUG [LogHandler.writeComplete] [10564607:/127.0.0.1:49253] Write complete.  
+[2013-10-14 13:19:15,351] DEBUG [ResourceFactory.getOnlineService] Request service : HYC_MENU_SCH  
+[2013-10-14 13:19:15,362] DEBUG [LogHandler.messageReceived] [10564607:/127.0.0.1:49253]메시지를 수신하였습니다.  
+[2013-10-14 13:19:15,362] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=291, RSV_SERVICE_ID=HYC_MENU_SCH, RSV_RETURN=0, RSV_REP_YN=0, _=1381724355338, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49250, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/include/menu_hy_json.jsp}  
+[2013-10-14 13:19:15,372] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.portal.menu.select.menu_r_07/*
+	Date		: 2012.12.12
+	Author		: Kiyoung Kim
+	Description : Retrieve hierarchy menu list for login
+
+    2012.12.26  : SimpleQuery.select() 로 변환 및 SQL 변경
+*/
+
+SELECT MENU.ID, 
+       MENU.PARENT_ID, 
+       HIERARCHY.LEVEL,
+       MENU.IMAGE,
+       MENU.NAME, 
+       MENU.LINK_VALUE, 
+       MENU_ORDER,
+       IF(ACCESS_LEVEL IS NULL, 'AR001AR001', ACCESS_LEVEL) AS ACCESS_LEVEL
+  FROM  
+       (
+        SELECT @id := MENU_HIERARCHY_ALL() AS ID, 
+               @level AS LEVEL, PARENT_ID
+          FROM (
+                SELECT @level := 0
+               )VARS, MENU
+         WHERE ID IS NOT NULL
+       ) HIERARCHY
+       JOIN MENU 
+       ON MENU.ID = HIERARCHY.ID
+       LEFT OUTER JOIN     
+        (
+       SELECT MENU_ID, MAX(ACCESS_LEVEL) ACCESS_LEVEL
+         FROM ACCESS_LIST
+        WHERE ROLE_MEMBER_ID = 'kykim'
+     GROUP BY MENU_ID
+        ) ACCESS_LIST
+       ON HIERARCHY.ID = ACCESS_LIST.MENU_ID
+ WHERE ACCESS_LIST.MENU_ID IS NOT NULL OR LINK_VALUE IS NULL OR LINK_VALUE = ''  
+[2013-10-14 13:19:15,411] DEBUG [LogHandler.writeRequested] [10564607:/127.0.0.1:49253] Write requested.  
+[2013-10-14 13:19:15,412] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=291, RSV_SERVICE_ID=HYC_MENU_SCH, RSV_RETURN=0, RSV_REP_YN=0, _=1381724355338, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49250, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/include/menu_hy_json.jsp, LIST=[{ID=MENU0018, PARENT_ID=MENU0018, LEVEL=1, IMAGE=null, NAME=프로젝트홈, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/project_dashboard.jsp');, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0004, PARENT_ID=MENU0004, LEVEL=1, IMAGE=null, NAME=프로젝트관리, LINK_VALUE=, MENU_ORDER=1, ACCESS_LEVEL=AR001AR001}, {ID=MENU0017, PARENT_ID=MENU0004, LEVEL=2, IMAGE=null, NAME=일정관리, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/schedule_management.jsp');, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0021, PARENT_ID=MENU0004, LEVEL=2, IMAGE=null, NAME=예산관리, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/budget_management.jsp');, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0023, PARENT_ID=MENU0004, LEVEL=2, IMAGE=null, NAME=예산집행관리, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/cost_management.jsp');, MENU_ORDER=2, ACCESS_LEVEL=AR001AR002}, {ID=MENU0028, PARENT_ID=MENU0028, LEVEL=1, IMAGE=null, NAME=보고서, LINK_VALUE=, MENU_ORDER=2, ACCESS_LEVEL=AR001AR001}, {ID=MENU0026, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=회의록, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/conference_management.jsp');, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0022, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=일일보고, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/report_d_management.jsp');, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0024, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=주간보고, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/report_w_management.jsp');, MENU_ORDER=2, ACCESS_LEVEL=AR001AR002}, {ID=MENU0025, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=월간보고, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/report_m_management.jsp');, MENU_ORDER=3, ACCESS_LEVEL=AR001AR002}, {ID=MENU0027, PARENT_ID=MENU0028, LEVEL=2, IMAGE=null, NAME=의사결정요청관리, LINK_VALUE=openGlobalProjectSelectPop('/jsp/pms/project/decision_management.jsp');, MENU_ORDER=4, ACCESS_LEVEL=AR001AR002}, {ID=MENU0019, PARENT_ID=MENU0019, LEVEL=1, IMAGE=null, NAME=프로젝트마스터, LINK_VALUE=, MENU_ORDER=3, ACCESS_LEVEL=AR001AR001}, {ID=MENU0005, PARENT_ID=MENU0019, LEVEL=2, IMAGE=null, NAME=프로젝트관리, LINK_VALUE=/jsp/pms/project/project_management.jsp, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0015, PARENT_ID=MENU0019, LEVEL=2, IMAGE=null, NAME=프로젝트멤버관리, LINK_VALUE=/jsp/pms/project/project_member_management.jsp, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0001, PARENT_ID=MENU0001, LEVEL=1, IMAGE=null, NAME=시스템관리, LINK_VALUE=, MENU_ORDER=4, ACCESS_LEVEL=AR001AR001}, {ID=MENU0008, PARENT_ID=MENU0001, LEVEL=2, IMAGE=null, NAME=멤버관리, LINK_VALUE=, MENU_ORDER=0, ACCESS_LEVEL=AR001AR001}, {ID=MENU0007, PARENT_ID=MENU0008, LEVEL=3, IMAGE=null, NAME=멤버관리, LINK_VALUE=/jsp/pms/portal/member/member_management.jsp, MENU_ORDER=0, ACCESS_LEVEL=AR001AR002}, {ID=MENU0009, PARENT_ID=MENU0008, LEVEL=3, IMAGE=null, NAME=부서관리, LINK_VALUE=/jsp/pms/portal/member/organization_management.jsp, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0011, PARENT_ID=MENU0008, LEVEL=3, IMAGE=null, NAME=접근관리, LINK_VALUE=/jsp/pms/portal/member/access_management.jsp, MENU_ORDER=2, ACCESS_LEVEL=AR001AR002}, {ID=MENU0010, PARENT_ID=MENU0001, LEVEL=2, IMAGE=null, NAME=마스터관리, LINK_VALUE=, MENU_ORDER=1, ACCESS_LEVEL=AR001AR001}, {ID=MENU0003, PARENT_ID=MENU0010, LEVEL=3, IMAGE=null, NAME=코드관리, LINK_VALUE=/jsp/pms/portal/code/code_management.jsp, MENU_ORDER=1, ACCESS_LEVEL=AR001AR002}, {ID=MENU0013, PARENT_ID=MENU0010, LEVEL=3, IMAGE=null, NAME=게시판관리, LINK_VALUE=/jsp/pms/board/board_master_management.jsp, MENU_ORDER=2, ACCESS_LEVEL=AR001AR002}, {ID=MENU0002, PARENT_ID=MENU0010, LEVEL=3, IMAGE=null, NAME=메뉴관리, LINK_VALUE=/jsp/pms/portal/menu/menu_management.jsp, MENU_ORDER=3, ACCESS_LEVEL=AR001AR002}, {ID=MENU0012, PARENT_ID=MENU0012, LEVEL=1, IMAGE=null, NAME=현황관리, LINK_VALUE=, MENU_ORDER=5, ACCESS_LEVEL=AR001AR001}]}  
+[2013-10-14 13:19:15,412] DEBUG [ResourceFactory.getOnlineService] Request service : HYC_MENU_SCH  
+[2013-10-14 13:19:15,427] DEBUG [LogHandler.writeComplete] [10564607:/127.0.0.1:49253] Write complete.  
+[2013-10-14 13:19:15,626] DEBUG [ResourceFactory.getOnlineService] Request service : MBR_PROFILE  
+[2013-10-14 13:19:15,645] DEBUG [LogHandler.messageReceived] [10564607:/127.0.0.1:49253]메시지를 수신하였습니다.  
+[2013-10-14 13:19:15,648] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=296, RSV_SERVICE_ID=MBR_PROFILE, RSV_RETURN=0, RSV_REP_YN=0, ID=kykim, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49244, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/portal/member/member_profile.jsp}  
+[2013-10-14 13:19:15,657] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.portal.member.select.member_r_10/*MEMBER PROFILE*/
+SELECT NAME, MAIL, IFNULL(PHONE, '없음') PHONE, IFNULL(MOBILE_PHONE, '없음') MOBILE_PHONE, PHOTO 
+  FROM VW_MEMBER
+ WHERE ID = 'kykim';  
+[2013-10-14 13:19:15,685] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.portal.member.select.member_r_11/*MEMBER ORGANIZATION FOR PROFILE*/
+SELECT CONCAT(CONCAT(CONCAT(ORG.NAME, ' ['), CD.NAME), ']') AS ROLE
+  FROM ORGANIZATION ORG, CODE CD, ROLE RL
+ WHERE 1=1
+   AND RL.ORGANIZATION_ID = ORG.ID
+   AND RL.ROLE_CODE = CD.ID
+   AND RL.USE_YN = 'Y'
+   AND RL.MEMBER_ID = 'kykim'  
+[2013-10-14 13:19:15,699] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.portal.member.select.member_r_12/*MEMBER PROJECT LIST FOR PROFILE*/
+SELECT PRJ.ID, PRJ.TITLE, PRJ.FROM_DATE, PRJ.TO_DATE
+  FROM PROJECT_MEMBER PMBR, PROJECT PRJ
+ WHERE PMBR.PROJECT_ID = PRJ.ID
+   AND MEMBER_ID = 'kykim'  
+[2013-10-14 13:19:15,712] DEBUG [LogHandler.writeRequested] [10564607:/127.0.0.1:49253] Write requested.  
+[2013-10-14 13:19:15,712] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=296, RSV_SERVICE_ID=MBR_PROFILE, RSV_RETURN=0, RSV_REP_YN=0, ID=kykim, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49244, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/portal/member/member_profile.jsp, NAME=김기영, MAIL=kykim@nabsys.co.kr, PHONE=010-765-9938, MOBILE_PHONE=01054074417, PHOTO=[B@893f08, LIST=[{ROLE=개발1파트 [과장]}, {ROLE=개발4파트 [PM]}], PRJ_LIST=[{ID=PRJ.NAB02, TITLE=나비 개발 프로젝트, FROM_DATE=2013-08-12, TO_DATE=2013-12-31}, {ID=TEST01.PRG, TITLE=테스트 프로젝트, FROM_DATE=2013-10-01, TO_DATE=2013-11-30}]}  
+[2013-10-14 13:19:15,713] DEBUG [ResourceFactory.getOnlineService] Request service : MBR_PROFILE  
+[2013-10-14 13:19:15,723] DEBUG [LogHandler.writeComplete] [10564607:/127.0.0.1:49253] Write complete.  
+[2013-10-14 13:19:19,777] DEBUG [ResourceFactory.getOnlineService] Request service : SCHDL_LIST_SEARCH  
+[2013-10-14 13:19:19,792] DEBUG [LogHandler.messageReceived] [10564607:/127.0.0.1:49253]메시지를 수신하였습니다.  
+[2013-10-14 13:19:19,793] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=1162, RSV_SERVICE_ID=SCHDL_LIST_SEARCH, RSV_RETURN=0, RSV_REP_YN=0, sSearch_2=, sSearch_3=, bRegex=false, sSearch_0=, sSearch_1=, sSearch=, iSortingCols=0, mDataProp_0=0, mDataProp_1=1, bSortable_5=true, mDataProp_2=2, mDataProp_3=3, mDataProp_4=4, bSortable_2=true, mDataProp_5=5, bSortable_1=true, bSortable_4=true, bSortable_3=true, bSortable_0=true, sColumns=, iColumns=6, sSearch_5=, sSearch_4=, ASSIGNEE=kykim, bSearchable_2=true, bRegex_2=false, bSearchable_1=true, bRegex_3=false, bSearchable_0=true, bRegex_4=false, bRegex_5=false, iDisplayStart=0, iDisplayLength=20, sEcho=1, bSearchable_5=true, bSearchable_4=true, bRegex_0=false, bSearchable_3=true, bRegex_1=false, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49244, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/project/schedule_list_search.jsp}  
+[2013-10-14 13:19:19,809] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.project.select.project_r_39SELECT SCHDL.ID ID, 
+       TP_CD.NAME SCHDL_TYPE, 
+       SCHDL.SCHDL_TYPE SCHDL_TYPE_CD,
+       DATE_FORMAT(SCHDL.FROM_DATE, '%Y년 %m월 %d일') FROM_DATE, 
+       DATE_FORMAT(SCHDL.TO_DATE, '%Y년 %m월 %d일') TO_DATE, 
+       SCHDL.TITLE TITLE, 
+       MBR.NAME RGST_MEMBER_NAME,
+       SCHDL.RGST_MEMBER_ID RGST_MEMBER_ID, 
+       DATE_FORMAT(SCHDL.RGST_DTTM, '%Y년 %m월 %d일') RGST_DTTM
+  FROM PROJECT_SCHEDULE SCHDL, CODE TP_CD, MEMBER MBR
+ WHERE SCHDL.SCHDL_TYPE = TP_CD.ID
+   AND SCHDL.RGST_MEMBER_ID = MBR.ID
+   AND ASSIGNEE = 'kykim'
+   AND SCHDL_STATUS = 'ST002ST001'
+   AND SCHDL.TO_DATE <= CURRENT_DATE
+ORDER BY          SCHDL.TO_DATE DESC  
+[2013-10-14 13:19:19,827] DEBUG [LogHandler.writeRequested] [10564607:/127.0.0.1:49253] Write requested.  
+[2013-10-14 13:19:19,827] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=1162, RSV_SERVICE_ID=SCHDL_LIST_SEARCH, RSV_RETURN=0, RSV_REP_YN=0, sSearch_2=, sSearch_3=, bRegex=false, sSearch_0=, sSearch_1=, sSearch=, iSortingCols=0, mDataProp_0=0, mDataProp_1=1, bSortable_5=true, mDataProp_2=2, mDataProp_3=3, mDataProp_4=4, bSortable_2=true, mDataProp_5=5, bSortable_1=true, bSortable_4=true, bSortable_3=true, bSortable_0=true, sColumns=, iColumns=6, sSearch_5=, sSearch_4=, ASSIGNEE=kykim, bSearchable_2=true, bRegex_2=false, bSearchable_1=true, bRegex_3=false, bSearchable_0=true, bRegex_4=false, bRegex_5=false, sEcho=1, bSearchable_5=true, bSearchable_4=true, bRegex_0=false, bSearchable_3=true, bRegex_1=false, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49244, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/project/schedule_list_search.jsp, iDisplayStart=0, iDisplayLength=20, LIST=[{ID=20130829135947075, SCHDL_TYPE=Schedule, SCHDL_TYPE_CD=ST001TP001, FROM_DATE=2013년 09월 02일, TO_DATE=2013년 09월 20일, TITLE=공통모듈 개발, RGST_MEMBER_NAME=김기영, RGST_MEMBER_ID=kykim, RGST_DTTM=2013년 08월 29일}, {ID=20130829140451081, SCHDL_TYPE=Schedule, SCHDL_TYPE_CD=ST001TP001, FROM_DATE=2013년 09월 09일, TO_DATE=2013년 09월 13일, TITLE=Data Grid, RGST_MEMBER_NAME=김기영, RGST_MEMBER_ID=kykim, RGST_DTTM=2013년 08월 29일}, {ID=20130829140133078, SCHDL_TYPE=Schedule, SCHDL_TYPE_CD=ST001TP001, FROM_DATE=2013년 09월 04일, TO_DATE=2013년 09월 05일, TITLE=Left Menu, RGST_MEMBER_NAME=김기영, RGST_MEMBER_ID=kykim, RGST_DTTM=2013년 08월 29일}, {ID=20130829140057077, SCHDL_TYPE=Schedule, SCHDL_TYPE_CD=ST001TP001, FROM_DATE=2013년 09월 03일, TO_DATE=2013년 09월 03일, TITLE=Page Footer, RGST_MEMBER_NAME=김기영, RGST_MEMBER_ID=kykim, RGST_DTTM=2013년 08월 29일}, {ID=20130829140033076, SCHDL_TYPE=Schedule, SCHDL_TYPE_CD=ST001TP001, FROM_DATE=2013년 09월 02일, TO_DATE=2013년 09월 02일, TITLE=Page Header, RGST_MEMBER_NAME=김기영, RGST_MEMBER_ID=kykim, RGST_DTTM=2013년 08월 29일}, {ID=20130829135846074, SCHDL_TYPE=Schedule, SCHDL_TYPE_CD=ST001TP001, FROM_DATE=2013년 08월 21일, TO_DATE=2013년 08월 30일, TITLE=ERD작성, RGST_MEMBER_NAME=김기영, RGST_MEMBER_ID=kykim, RGST_DTTM=2013년 08월 29일}, {ID=20130829135806073, SCHDL_TYPE=Schedule, SCHDL_TYPE_CD=ST001TP001, FROM_DATE=2013년 08월 19일, TO_DATE=2013년 08월 20일, TITLE=개념ERD, RGST_MEMBER_NAME=김기영, RGST_MEMBER_ID=kykim, RGST_DTTM=2013년 08월 29일}], TOTAL_CNT=7}  
+[2013-10-14 13:19:19,827] DEBUG [ResourceFactory.getOnlineService] Request service : SCHDL_LIST_SEARCH  
+[2013-10-14 13:19:19,829] DEBUG [LogHandler.channelOpen] [10735508:/127.0.0.1:49258] Channel opened.  
+[2013-10-14 13:19:19,832] DEBUG [LogHandler.channelConnected] [10735508:/127.0.0.1:49258] Channel connected.  
+[2013-10-14 13:19:19,842] DEBUG [ResourceFactory.getOnlineService] Request service : RPT_LIST_SEARCH  
+[2013-10-14 13:19:19,941] DEBUG [LogHandler.channelOpen] [27777559:/127.0.0.1:49264] Channel opened.  
+[2013-10-14 13:19:19,944] DEBUG [LogHandler.channelConnected] [27777559:/127.0.0.1:49264] Channel connected.  
+[2013-10-14 13:19:19,946] DEBUG [ResourceFactory.getOnlineService] Request service : DCS_LIST_SEARCH  
+[2013-10-14 13:19:19,947] DEBUG [LogHandler.writeComplete] [10564607:/127.0.0.1:49253] Write complete.  
+[2013-10-14 13:19:20,083] DEBUG [LogHandler.messageReceived] [10735508:/127.0.0.1:49258]메시지를 수신하였습니다.  
+[2013-10-14 13:19:20,083] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=1184, RSV_SERVICE_ID=RPT_LIST_SEARCH, RSV_RETURN=0, RSV_REP_YN=0, sSearch_2=, sSearch_3=, bRegex=false, S_RQ_CUR=Y, sSearch_0=, sSearch_1=, sSearch=, iSortingCols=0, S_RECEIVER_ID=kykim, mDataProp_0=0, mDataProp_1=1, bSortable_5=true, mDataProp_2=2, mDataProp_3=3, mDataProp_4=4, bSortable_2=true, mDataProp_5=5, bSortable_1=true, bSortable_4=true, bSortable_3=true, bSortable_0=true, sColumns=, iColumns=6, sSearch_5=, sSearch_4=, bSearchable_2=true, bRegex_2=false, bSearchable_1=true, bRegex_3=false, bSearchable_0=true, bRegex_4=false, bRegex_5=false, iDisplayStart=0, iDisplayLength=20, bSearchable_5=true, sEcho=1, bSearchable_4=true, bRegex_0=false, bSearchable_3=true, bRegex_1=false, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49250, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/project/report_list_search.jsp}  
+[2013-10-14 13:19:20,085] DEBUG [LogHandler.messageReceived] [27777559:/127.0.0.1:49264]메시지를 수신하였습니다.  
+[2013-10-14 13:19:20,085] DEBUG [LogHandler.messageReceived] {RSV_LENGTH=1188, RSV_SERVICE_ID=DCS_LIST_SEARCH, RSV_RETURN=0, RSV_REP_YN=0, sSearch_2=, sSearch_3=, bRegex=false, sSearch_0=, sSearch_1=, sSearch=, iSortingCols=0, S_RECEIVER_ID=kykim, mDataProp_0=0, mDataProp_1=1, bSortable_5=true, mDataProp_2=2, mDataProp_3=3, mDataProp_4=4, bSortable_2=true, mDataProp_5=5, bSortable_1=true, bSortable_4=true, bSortable_3=true, bSortable_0=true, sColumns=, iColumns=6, sSearch_5=, sSearch_4=, S_RQ_TO_ME=Y, bSearchable_2=true, bRegex_2=false, bSearchable_1=true, bRegex_3=false, bSearchable_0=true, bRegex_4=false, bRegex_5=false, iDisplayStart=0, iDisplayLength=20, sEcho=1, bSearchable_5=true, bSearchable_4=true, bRegex_0=false, bSearchable_3=true, bRegex_1=false, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49242, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/project/decision_list_search.jsp}  
+[2013-10-14 13:19:20,113] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.project.select.project_r_30SELECT RPT.ID ID, 
+       CASE RPT.REPORT_TYPE
+       WHEN 'RPTYPRT001' THEN
+            '일일보고'
+       WHEN 'RPTYPRT002' THEN
+            '주간보고'
+       WHEN 'RPTYPRT003' THEN
+            '월간보고'
+       END AS RPT_TYPE_NAME,
+       CASE RPT.REPORT_TYPE
+       WHEN 'RPTYPRT001' THEN
+            DATEDIFF(RPT.RGST_DTTM, DATE_FORMAT('20130812', '%Y%m%d')) + 1
+       WHEN 'RPTYPRT002' THEN
+            ROUND(DATEDIFF(DATE_SUB(RPT.RGST_DTTM, INTERVAL (DAYOFWEEK(RPT.RGST_DTTM) - 1) DAY), DATE_SUB(PJT.FROM_DATE, INTERVAL (DAYOFWEEK(PJT.FROM_DATE) - 1) DAY))/7 + 1)
+       WHEN 'RPTYPRT003' THEN
+            PERIOD_DIFF(DATE_FORMAT(RPT.RGST_DTTM, '%Y%m'), DATE_FORMAT(PJT.FROM_DATE, '%Y%m')) + 1
+       END AS DIFF_COUNT,
+       CASE RPT.REPORT_TYPE
+       WHEN 'RPTYPRT001' THEN
+            CONCAT(CONCAT(DATE_FORMAT(RPT.RGST_DTTM, '%Y년 %m월 %d일'), ' ~ '), DATE_FORMAT(RPT.RGST_DTTM, '%Y년 %m월 %d일'))
+       WHEN 'RPTYPRT002' THEN
+            IF(RPT.RGST_DTTM > PJT.FROM_DATE,
+            CONCAT(CONCAT(DATE_FORMAT(DATE_SUB(RPT.RGST_DTTM, INTERVAL (DAYOFWEEK(RPT.RGST_DTTM) -1) DAY), '%Y년 %m월 %d일'), ' ~ '), DATE_FORMAT(DATE_ADD(RPT.RGST_DTTM, INTERVAL (7 - DAYOFWEEK(RPT.RGST_DTTM)) DAY), '%Y년 %m월 %d일')),
+            CONCAT(CONCAT(DATE_FORMAT(DATE_SUB(PJT.FROM_DATE, INTERVAL (DAYOFWEEK(PJT.FROM_DATE) -1) DAY), '%Y년 %m월 %d일'), ' ~ '), DATE_FORMAT(DATE_ADD(RPT.RGST_DTTM, INTERVAL (7 - DAYOFWEEK(RPT.RGST_DTTM)) DAY), '%Y년 %m월 %d일')))
+       WHEN 'RPTYPRT003' THEN
+            IF(RPT.RGST_DTTM > PJT.FROM_DATE,
+            CONCAT(CONCAT(DATE_FORMAT(RPT.RGST_DTTM, '%Y년 %m월 01일'), ' ~ '), DATE_FORMAT(LAST_DAY(RPT.RGST_DTTM), '%Y년 %m월 %d일')), 
+            CONCAT(CONCAT(DATE_FORMAT(PJT.FROM_DATE, '%Y년 %m월 01일'), ' ~ '), DATE_FORMAT(LAST_DAY(PJT.FROM_DATE), '%Y년 %m월 %d일')))
+       END AS PERIOD,
+       DATE_FORMAT(RPT.RGST_DTTM, '%Y년 %m월 %d일') RGST_DTTM,
+       RCV_ORG.NAME RECEIVER_ORGANIZATION,
+       RCV_MBR.NAME RECEIVER,
+       RPT_ORG.NAME MEMBER_ORGANIZATION,
+       RPT_MBR.NAME MEMBER_NAME,
+       RPT.RECEIVER RECEIVER_ID,
+       RPT.RGST_MEMBER_ID MEMBER_ID
+  FROM PROJECT PJT,
+       REPORT RPT,
+       MEMBER RCV_MBR, 
+       MEMBER RPT_MBR, 
+       PROJECT_MEMBER RCV_PMBR, 
+       PROJECT_MEMBER RPT_PMBR, 
+       ORGANIZATION RCV_ORG, 
+       ORGANIZATION RPT_ORG
+ WHERE RPT.RECEIVER = RCV_PMBR.MEMBER_ID
+   AND RPT.PROJECT_ID = PJT.ID
+   AND RPT.RGST_MEMBER_ID = RPT_PMBR.MEMBER_ID
+   AND RCV_PMBR.MEMBER_ID = RCV_MBR.ID
+   AND RPT_PMBR.MEMBER_ID = RPT_MBR.ID
+   AND RCV_PMBR.ORGANIZATION_ID = RCV_ORG.ID
+   AND RPT_PMBR.ORGANIZATION_ID = RPT_ORG.ID
+   AND PJT.ID = RCV_PMBR.PROJECT_ID
+   AND PJT.ID = RPT_PMBR.PROJECT_ID   AND CASE RPT.REPORT_TYPE
+       WHEN 'RPTYPRT001' THEN
+            STR_TO_DATE(RPT.RGST_DTTM, '%Y-%m-%d') = STR_TO_DATE(CURRENT_DATE, '%Y-%m-%d')
+       WHEN 'RPTYPRT002' THEN
+            (WEEK(RPT.RGST_DTTM) = WEEK(CURRENT_DATE) AND STR_TO_DATE(RPT.RGST_DTTM, '%Y') = STR_TO_DATE(CURRENT_DATE, '%Y'))
+       WHEN 'RPTYPRT003' THEN
+            STR_TO_DATE(RPT.RGST_DTTM, '%Y-%m') = STR_TO_DATE(CURRENT_DATE, '%Y-%m')
+       END   AND RPT.RECEIVER = 'kykim'ORDER BY
+         RPT.REPORT_TYPE DESC,         RPT.RGST_DTTM DESCLIMIT '0', '20'  
+[2013-10-14 13:19:20,139] DEBUG [LogHandler.writeRequested] [10735508:/127.0.0.1:49258] Write requested.  
+[2013-10-14 13:19:20,140] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=1184, RSV_SERVICE_ID=RPT_LIST_SEARCH, RSV_RETURN=0, RSV_REP_YN=0, sSearch_2=, sSearch_3=, bRegex=false, S_RQ_CUR=Y, sSearch_0=, sSearch_1=, sSearch=, iSortingCols=0, S_RECEIVER_ID=kykim, mDataProp_0=0, mDataProp_1=1, bSortable_5=true, mDataProp_2=2, mDataProp_3=3, mDataProp_4=4, bSortable_2=true, mDataProp_5=5, bSortable_1=true, bSortable_4=true, bSortable_3=true, bSortable_0=true, sColumns=, iColumns=6, sSearch_5=, sSearch_4=, bSearchable_2=true, bRegex_2=false, bSearchable_1=true, bRegex_3=false, bSearchable_0=true, bRegex_4=false, bRegex_5=false, bSearchable_5=true, sEcho=1, bSearchable_4=true, bRegex_0=false, bSearchable_3=true, bRegex_1=false, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49250, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/project/report_list_search.jsp, iDisplayStart=0, iDisplayLength=20, LIST=[{ID=20131011133827007, RPT_TYPE_NAME=월간보고, DIFF_COUNT=3, PERIOD=2013년 10월 01일 ~ 2013년 10월 31일, RGST_DTTM=2013년 10월 10일, RECEIVER_ORGANIZATION=개발1파트, RECEIVER=김기영, MEMBER_ORGANIZATION=개발1파트, MEMBER_NAME=김기영, RECEIVER_ID=kykim, MEMBER_ID=kykim}], TOTAL_CNT=1}  
+[2013-10-14 13:19:20,140] DEBUG [ResourceFactory.getOnlineService] Request service : RPT_LIST_SEARCH  
+[2013-10-14 13:19:20,143] DEBUG [DatabaseSelectHandler.execute] EXECUTE ID : pms.project.select.project_r_32SELECT DR.ID ID,
+       DR.TITLE TITLE,
+       CODE.NAME DECISION_STATUS,
+       DATE_FORMAT(DR.RGST_DTTM, '%Y년 %m월 %d일') RGST_DTTM,
+       DATE_FORMAT(DR.DUE_DATE, '%Y년 %m월 %d일') DUE_DATE,
+       DR.RGST_MEMBER_ID MEMBER_ID,
+       MBR_ORG.NAME MEMBER_ORGANIZATION,
+       MBR.NAME MEMBER_NAME,
+       DR.RECEIVER RECEIVER_ID,
+       RCV_ORG.NAME RECEIVER_ORGANIZATION,
+       RCV_MBR.NAME RECEIVER
+  FROM DECISION_REQUEST DR, 
+       PROJECT_MEMBER PMBR, 
+       PROJECT_MEMBER RCV_PMBR, 
+       ORGANIZATION MBR_ORG, 
+       ORGANIZATION RCV_ORG, 
+       MEMBER MBR,
+       MEMBER RCV_MBR,
+       CODE
+ WHERE DR.RGST_MEMBER_ID = PMBR.MEMBER_ID
+   AND DR.PROJECT_ID = PMBR.PROJECT_ID
+   AND DR.PROJECT_ID = RCV_PMBR.PROJECT_ID
+   AND DR.RECEIVER = RCV_PMBR.MEMBER_ID
+   AND PMBR.ORGANIZATION_ID = MBR_ORG.ID
+   AND RCV_PMBR.ORGANIZATION_ID = RCV_ORG.ID
+   AND PMBR.MEMBER_ID = MBR.ID
+   AND RCV_PMBR.MEMBER_ID = RCV_MBR.ID
+   AND DR.DECISION_STATUS = CODE.ID
+   AND DR.GROUP_ID = DR.ID   AND (DR.DECISION_STATUS = 'DCSSTPR001' OR DR.DECISION_STATUS = 'DCSSTPR002')   AND DR.RECEIVER = 'kykim'ORDER BY         DR.RGST_DTTM DESCLIMIT '0', '20'  
+[2013-10-14 13:19:20,151] DEBUG [LogHandler.writeComplete] [10735508:/127.0.0.1:49258] Write complete.  
+[2013-10-14 13:19:20,156] DEBUG [LogHandler.writeRequested] [27777559:/127.0.0.1:49264] Write requested.  
+[2013-10-14 13:19:20,156] DEBUG [LogHandler.writeRequested] {RSV_LENGTH=1188, RSV_SERVICE_ID=DCS_LIST_SEARCH, RSV_RETURN=0, RSV_REP_YN=0, sSearch_2=, sSearch_3=, bRegex=false, sSearch_0=, sSearch_1=, sSearch=, iSortingCols=0, S_RECEIVER_ID=kykim, mDataProp_0=0, mDataProp_1=1, bSortable_5=true, mDataProp_2=2, mDataProp_3=3, mDataProp_4=4, bSortable_2=true, mDataProp_5=5, bSortable_1=true, bSortable_4=true, bSortable_3=true, bSortable_0=true, sColumns=, iColumns=6, sSearch_5=, sSearch_4=, S_RQ_TO_ME=Y, bSearchable_2=true, bRegex_2=false, bSearchable_1=true, bRegex_3=false, bSearchable_0=true, bRegex_4=false, bRegex_5=false, sEcho=1, bSearchable_5=true, bSearchable_4=true, bRegex_0=false, bSearchable_3=true, bRegex_1=false, LOGIN_MEMBER=kykim, LOGIN_MEMBER_NAME=김기영, APP_TITLE=Nabee PMS, LOGIN_MEMBER_TYPE=ET001ET001, RemotePort=49242, RemoteAddr=127.0.0.1, RemoteHost=127.0.0.1, RequestURI=/jsp/pms/project/decision_list_search.jsp, iDisplayStart=0, iDisplayLength=20, LIST=[{ID=20130927143210017, TITLE=테스트4, DECISION_STATUS=요청, RGST_DTTM=2013년 09월 27일, DUE_DATE=2013년 09월 27일, MEMBER_ID=kykim, MEMBER_ORGANIZATION=개발1파트, MEMBER_NAME=김기영, RECEIVER_ID=kykim, RECEIVER_ORGANIZATION=개발1파트, RECEIVER=김기영}], TOTAL_CNT=1}  
+[2013-10-14 13:19:20,157] DEBUG [ResourceFactory.getOnlineService] Request service : DCS_LIST_SEARCH  
+[2013-10-14 13:19:20,168] DEBUG [LogHandler.writeComplete] [27777559:/127.0.0.1:49264] Write complete.  
+[2013-10-14 13:19:58,706] DEBUG [LogHandler.channelDisconnected] [10564607:null] Channel disconnected.  
+[2013-10-14 13:19:58,706] DEBUG [LogHandler.channelDisconnected] [27777559:null] Channel disconnected.  
+[2013-10-14 13:19:58,707] DEBUG [LogHandler.channelDisconnected] [10735508:null] Channel disconnected.  
+[2013-10-14 13:19:58,707] DEBUG [LogHandler.channelClosed] [10564607:null] Channel closed.  
+[2013-10-14 13:19:58,707] DEBUG [LogHandler.channelClosed] [10735508:null] Channel closed.  
+[2013-10-14 13:19:58,707] DEBUG [LogHandler.channelClosed] [27777559:null] Channel closed.  
+[2013-10-14 13:20:00,313] INFO  [InternalCommunicator.runWorker] 내부 프로세스 커뮤니케이터가 종료되었습니다.  
+[2013-10-14 13:20:00,370] INFO  [MessageQueueManager.runWorker] 메시지큐 매니져가 종료되었습니다.  
+[2013-10-14 13:20:04,555] ERROR [DBPoolManager.getConnection] java.net.ConnectException: Connection refused: connect
+CLASS [org.hsqldb.jdbc.Util                              ] METHOD [sqlException        ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCConnection                    ] METHOD [<init>              ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCDriver                        ] METHOD [getConnection       ] LINE [-1   ]
+CLASS [org.hsqldb.jdbc.JDBCDriver                        ] METHOD [connect             ] LINE [-1   ]
+CLASS [org.apache.commons.dbcp.DriverConnectionFactory   ] METHOD [createConnection    ] LINE [37   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDataSource         ] METHOD [getConnection       ] LINE [95   ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [142  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getServiceList      ] LINE [409  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getBatchServiceList ] LINE [493  ]
+CLASS [com.nabsys.process.instance.batch.BatchManager    ] METHOD [runWorker           ] LINE [85   ]
+CLASS [com.nabsys.process.instance.InstanceThread        ] METHOD [run                 ] LINE [80   ]  
+[2013-10-14 13:20:04,555] INFO  [DBPoolManager.getConnection] Retrying database connection to CONFIG.  
+[2013-10-14 13:20:05,568] WARN  [BatchManager.runWorker] Cannot create PoolableConnectionFactory (java.net.ConnectException: Connection refused: connect)
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [createDataSource    ] LINE [855  ]
+CLASS [org.apache.commons.dbcp.BasicDataSource           ] METHOD [getConnection       ] LINE [540  ]
+CLASS [org.apache.commons.dbcp.DataSourceConnectionFactory] METHOD [createConnection    ] LINE [42   ]
+CLASS [org.apache.commons.dbcp.PoolableConnectionFactory ] METHOD [makeObject          ] LINE [290  ]
+CLASS [org.apache.commons.pool.impl.GenericObjectPool    ] METHOD [borrowObject        ] LINE [771  ]
+CLASS [org.apache.commons.dbcp.PoolingDriver             ] METHOD [connect             ] LINE [175  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [571  ]
+CLASS [java.sql.DriverManager                            ] METHOD [getConnection       ] LINE [233  ]
+CLASS [com.nabsys.database.DBPoolManager                 ] METHOD [getConnection       ] LINE [166  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getServiceList      ] LINE [409  ]
+CLASS [com.nabsys.process.ResourceFactory                ] METHOD [getBatchServiceList ] LINE [493  ]
+CLASS [com.nabsys.process.instance.batch.BatchManager    ] METHOD [runWorker           ] LINE [85   ]
+CLASS [com.nabsys.process.instance.InstanceThread        ] METHOD [run                 ] LINE [80   ]  
+[2013-10-14 13:20:05,568] INFO  [BatchManager.runWorker] 배치 매니져가 종료되었습니다.  
+[2013-10-14 13:20:05,606] INFO  [DatabaseConnector.finalizer] Database terminated.  
+[2013-10-14 13:20:05,607] INFO  [InstanceRuntime$1.run] 인스턴스가 종료되었습니다.  

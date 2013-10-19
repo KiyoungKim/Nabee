@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Mon May 20 18:23:02 KST 2013
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=F\:\\Nabee\\NabeeWorkspace\\com.nabsys.nabeeplus\\lib\\com.nabsys.net.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=<jar|servlet-api.jar>;<jar|jsp-api.jar>;<jar|netscape.jar>
+includes=

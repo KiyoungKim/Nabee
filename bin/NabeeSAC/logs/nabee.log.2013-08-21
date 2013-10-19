@@ -1,0 +1,32 @@
+[2013-08-21 12:31:52,071] INFO  [NabeeApp.main] 어플리케이션 매니져를 로딩합니다..  
+[2013-08-21 12:31:52,149] INFO  [AppManager.runWorker] 어플리케이션 매니져 프로세스가 로딩되었습니다.  
+[2013-08-21 12:31:52,180] INFO  [ConfigurationInitializer.initConfigRepository] 설정 데이터베이스를 로딩합니다.  
+[2013-08-21 12:31:55,893] INFO  [Logger.logInfoEvent] dataFileCache open start  
+[2013-08-21 12:31:55,940] INFO  [Logger.logInfoEvent] dataFileCache open end  
+[2013-08-21 12:31:55,987] INFO  [Logger.logInfoEvent] checkpointClose start  
+[2013-08-21 12:31:56,252] INFO  [Logger.logInfoEvent] dataFileCache commit start  
+[2013-08-21 12:31:56,486] INFO  [Logger.logInfoEvent] checkpointClose end  
+[2013-08-21 12:31:56,907] INFO  [ConfigurationInitializer.initConfigRepository] 설정 데이터베이스가 로딩되었습니다.  
+[2013-08-21 12:31:57,126] INFO  [AppManager.runWorker] 서비스 소켓이 오픈되었습니다.  
+[2013-08-21 12:31:58,670] INFO  [InstanceManager.loadInstances] 인스턴스 로딩을 호출하였습니다. [FlexibleTest]  
+[2013-08-21 12:31:58,873] INFO  [WorkerProcess.runWorker] 워커 프로세스 로딩 성공. (Access address : 127.0.0.1)  
+[2013-08-21 12:31:59,918] INFO  [WorkerProcess.runWorker] 인스턴스를 등록하였습니다. [FlexibleTest]  
+[2013-08-21 12:32:01,306] INFO  [InstanceManager.loadInstances] 인스턴스 로딩을 호출하였습니다. [PMS]  
+[2013-08-21 12:32:01,384] INFO  [WorkerProcess.runWorker] 워커 프로세스 로딩 성공. (Access address : 127.0.0.1)  
+[2013-08-21 12:32:02,695] INFO  [WorkerProcess.runWorker] 인스턴스를 등록하였습니다. [PMS]  
+[2013-08-21 12:32:05,706] INFO  [InstanceManager.loadInstances] 인스턴스 로딩을 호출하였습니다. [ReadByLengthField]  
+[2013-08-21 12:32:05,815] INFO  [WorkerProcess.runWorker] 워커 프로세스 로딩 성공. (Access address : 127.0.0.1)  
+[2013-08-21 12:32:07,156] INFO  [WorkerProcess.runWorker] 인스턴스를 등록하였습니다. [ReadByLengthField]  
+[2013-08-21 12:46:09,228] INFO  [WorkerProcess.runWorker] 워커 프로세스 로딩 성공. (Access address : 127.0.0.1)  
+[2013-08-21 13:00:41,806] INFO  [WorkerProcess.runWorker] 상대방의 연결이 종료되었습니다.  
+[2013-08-21 13:00:41,806] INFO  [WorkerProcess.runWorker] 워커 프로세스 종료. [127.0.0.1]  
+[2013-08-21 13:01:14,888] ERROR [WorkerProcess.runWorker] 상대방의 연결이 종료되었습니다.
+CLASS [com.nabsys.net.socket.client.Socket$1             ] METHOD [read                ] LINE [394  ]
+CLASS [com.nabsys.net.socket.client.Socket$1             ] METHOD [run                 ] LINE [319  ]
+CLASS [java.lang.Thread                                  ] METHOD [run                 ] LINE [595  ]  
+[2013-08-21 13:01:14,904] INFO  [InstanceManager.destroyInstance] 인스턴스를 삭제하였습니다. [ReadByLengthField]  
+[2013-08-21 13:01:14,904] ERROR [WorkerProcess.runWorker] 상대방의 연결이 종료되었습니다.
+CLASS [com.nabsys.net.socket.client.Socket$1             ] METHOD [read                ] LINE [394  ]
+CLASS [com.nabsys.net.socket.client.Socket$1             ] METHOD [run                 ] LINE [319  ]
+CLASS [java.lang.Thread                                  ] METHOD [run                 ] LINE [595  ]  
+[2013-08-21 13:01:14,904] INFO  [InstanceManager.destroyInstance] 인스턴스를 삭제하였습니다. [PMS]  
